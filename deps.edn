@@ -1,0 +1,36 @@
+;;;
+;;; Clojure path configuration.
+;;;
+;;; https://clojure.org/reference/deps_edn
+;;;
+{:paths
+ ["inputs/main/clojure"]
+
+ :deps
+ {; Computer algebra system (CAS) with Node.js dependencies for ClojureScript.
+  ;
+  ; Has a deps.cljs.
+  org.mentat/emmy
+  {:mvn/version "0.32.0"}}
+
+ :aliases
+ {:build
+  {:deps
+   {io.github.clojure/tools.build
+    {:mvn/version "0.10.5"}
+
+    org.clojure/data.json
+    {:mvn/version "2.5.0"}}
+
+   :ns-default
+   build}
+
+  :cljs
+  {:extra-deps
+   {org.clojure/clojurescript
+    {:git/url "https://github.com/commiterate/clojurescript.git"
+     :git/sha "45cabc0639f58d1110193195a1510794be843a99"}}
+
+   :main-opts
+   ["--main"
+    "cljs.main"]}}}

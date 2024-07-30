@@ -1,0 +1,11 @@
+;;;
+;;; cljfmt configuration.
+;;;
+;;; https://github.com/weavejester/cljfmt#configuration
+;;;
+{:remove-multiple-non-indenting-spaces? true
+ :split-keypairs-over-multiple-lines? true
+ :sort-ns-references? true
+ :function-arguments-indentation :cursive
+ :parallel? true
+ :paths ["inputs" "build.clj" "cljfmt.edn" "deps.edn"]}
